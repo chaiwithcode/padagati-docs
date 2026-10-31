@@ -1,12 +1,25 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --ink: #242a27;
   --muted: #68716c;
   --accent: #b74000;
   --paper: #faf8f6;
   --surface: #fff;
   --line: #dce2dc;
+  --card-bg: #fff3e9;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8edea;
+    --muted: #95a19a;
+    --accent: #ff6e26;
+    --paper: #121514;
+    --surface: #1a1e1c;
+    --line: #2a332e;
+    --card-bg: #2b1f16;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -50,7 +63,8 @@ p, ul { max-width: 66ch; }
 .card {
   margin-top: 1.5rem;
   padding: 1.2rem 1.35rem;
-  background: #fff3e9;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
   border-radius: .9rem;
 }
 .card p:first-child { margin-top: 0; }
